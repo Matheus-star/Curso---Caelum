@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>peso</title>
+    <!--<script src="peso.js"></script>-->
+    <script src="../Funçoes/pegaNumero.js"></script>
+    <script src="funcao.js"></script>
+    <script src="funcaoidoso.js"></script>
+
+
+</head>
+<body>
+
+        <br>
+        Digite seu peso:
+        <input type="text" id="campopeso">
+        <br><br>
+        Digite sua Altura:
+        <input type="text" id="campoaltura">
+        <br><br>
+        <button onclick="calcular()">calcular</button>
+        <br><br>
+        é maior que 60 anos?
+        <input type="checkbox" id="campoidoso">
+        <br>
+        <button onclick="calcular2()">calcular idoso</button>
+
+
+
+    <script>
+
+        function calcular(){
+
+         
+
+        
+            let peso = pegaNumero(campopeso.value);
+
+            let altura  = pegaNumero(campoaltura.value);
+
+            // Calculos adultos
+
+            funcao(peso,altura)
+      
+        }
+       function calcular2(){
+
+        let peso = pegaNumero(campopeso.value);
+
+            let altura  = pegaNumero(campoaltura.value);
+
+            let idoso = campoidoso.checked;
+            // Calculos adultos
+
+            fidoso(altura,peso)
+
+       }
+        
+
+
+    </script>
+    
+</body>
+</html>

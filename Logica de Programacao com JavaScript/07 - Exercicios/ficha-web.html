@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script src="../Funçoes/pegaNumero.js"></script>-->
+    <script src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/libBrasil.js"></script>
+    <script src= "https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
+    <script src=  "https://rawgit.com/caelum/projeto01/calculoIdade/apostilaIgnore/libIdade.js"></script>
+
+</head>
+<body>
+    Nome 
+    <br>
+    <input type="text" id="campoNome">
+    <br>
+    Peso    
+    <br>
+    <input type="text" id="campoPeso">
+    <br>
+    Altura
+    <br>
+    <input type="text" id="campoAltura">
+    <br>
+    Data de nascimento
+    <br>
+    <input type="text" id="campoDatadenascimento">
+    <br>
+    <button onclick="criarficha()">
+        Enviar
+    </button>
+    <script>
+    // solicita dados
+        function criarficha(){
+        let nome = campoNome.value;
+        let peso = parseFloatBrasil(campoPeso.value);
+        let altura = parseFloatBrasil(campoAltura.value);
+        let dataNascimento = campoDatadenascimento.value;
+         //Calcular idade
+        let dataNascimentoLista = dataNascimento.split("/");
+         //Separar dia mmes e ano
+           let dia = dataNascimentoLista[0];   
+            let mes = dataNascimentoLista[1]
+            let ano = dataNascimentoLista[2];
+
+            // chamar função  externa para calculara a idade
+            let idade = calculaIdade(dia,mes,ano);
+            // Condição Idade
+            let frase 
+            // Avaliar crança  utilizando váravel boleano
+            let ehcrianca = (idade <= 12);
+            let ehsenior = (idade > 50);
+            if (encrianca && ehsenior){
+
+                (frase = "Requer acompanhamento médico "+ nome ) ;
+
+            }else {
+
+               (frase = "Não requer acompanhamento "+ nome );
+
+            }
+
+      
+            //exibe dados
+            mostra(`
+            Nome: ${nome}
+            <br>
+            peso: ${formataFloatBrasil(peso)} Kg
+            <br>
+            Altura: ${formataFloatBrasil(altura)} metros
+            <br>    
+            Data de Nacimento: ${dataNascimento} 
+            <br>
+            Idade: ${idade}
+            <br>
+            Requerimento: ${frase}
+            `)
+            
+        }
+       
+       
+
+    </script> 
+</body>
+</html>

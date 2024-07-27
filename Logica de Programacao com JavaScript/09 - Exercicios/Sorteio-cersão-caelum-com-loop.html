@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= "https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Adivinhe um numero de 0 a 10</h1>
+
+        Quantos nomes você quer sortear?
+    <input type="text" id="campoQnumero " min="1" max="5" onkeypress="return false">
+    <br><br><br>
+
+
+
+    <p>Seu Palpite</p> 
+    Digite um numero
+    <br>
+    <input type="text" id="campoNum">
+    <br>
+    <button onclick="criarficha()">
+        Resultado
+    </button>
+
+    <script>
+       
+       let tentativa = 5
+
+        function criarficha() {
+          
+
+            if (tentativa == 0) {
+            alert("Você esgotou o número de tentativas. Compre mais fichas para continuar jogando")
+            return
+
+        }
+
+        while (tentativa > 0){ //Tentativas
+            let num = parseInt(campoNum.value);
+            if (num < 1 || num > 10 || isNaN(num)){
+
+                alert("Favor testar um número entre 1 a 10");
+                return
+
+            }
+
+            // Sortear uma lista de números 
+            let  listanumerica = [];
+            let listanumericaanterior = [];
+            let contador = 0;
+            let totaldenumeros = campoQnumero.value;
+
+            // Carrega os numeros sortados na lista
+            while (contador < totaldenumeros){ continue }
+                let valor = parseInt((Math.random()*10)+1);
+                listanumerica.push(num);
+                if(listanumerica){
+                    listanumerica.push(num)
+                    listanumericaanterior.push(num);
+              
+                contador++;
+
+            }
+
+
+            
+                if (listanumerica.includes(num)){
+
+                    mostra('Você acertou ');
+                    tentativa++
+                    alert("Parabéns você ganhou mais uma tentativa ");
+                    mostra(`
+
+                    O numero de lista é ${listanumerica};
+
+                    `)
+                }else{
+
+                    mostra(`
+                    Você errou o numero era: ${valor};
+                    <br>
+                    O numero de lista é ${listanumerica};
+                    `);
+            }
+            tentativa--
+          
+            if (tentativa > 0) {
+                mostra(`
+                    Você ainda tem ${tentativa} tentativas
+                `)
+            } else {
+                alert("Você esgotou o número de tentativas")
+            }
+            break
+        }
+    }
+
+    </script>
+    <hr>
+</body>
+</html>

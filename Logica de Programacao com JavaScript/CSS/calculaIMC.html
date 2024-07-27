@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="calculaIMCAdultos.js"></script>
+    <link rel="stylesheet" href="stile.css">
+    <script
+        src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/libBrasil.js"></script>
+    <script
+        src="https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
+        <script src="funcaoidoso.js"></script>
+</head>
+
+<body>
+    <div class="formulario">
+        <h1>Cálculo de IMC</h1>
+
+        Peso
+        <br>
+        <input type="text" id="campoPeso">
+        <br><br>
+
+        Altura
+        <br>
+        <input type="text" id="campoAltura">
+        <br><br>
+
+        é maior que 60 anos?
+        <div>
+            <label class="chec">
+            <input type="checkbox" id="campoidoso">
+            <span class="slider round"></span>
+            </label>
+            <br>
+
+         </div>
+        <button onclick="calculaIMC()">
+            Calcular
+        </button>
+    </div>
+    <script>
+        function calculaIMC() {
+            // Entrada de dados
+            let peso = parseFloatBrasil(campoPeso.value)
+            let altura = parseFloatBrasil(campoAltura.value)
+            let idoso =campoidoso.checkbox
+        
+            // Cálculos (processamento)
+            calculaIMCAdultos(peso, altura)
+
+            if (idoso){
+
+                fidoso(peso,altura);
+
+            }else{
+
+                calculaIMCAdultos(peso, altura)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

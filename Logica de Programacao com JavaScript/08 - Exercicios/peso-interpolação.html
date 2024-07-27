@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>peso</title>
+    <!--<script src="peso.js"></script>-->
+    <script src="../Funçoes/pegaNumero.js"></script>
+</head>
+<body>
+    <script>
+
+    let peso = pegaNumero("Qual seu peso");
+
+    let altura  = pegaNumero("Qual a sua Altura");
+
+    let imc = peso / (altura * altura);
+
+    alert (imc.toFixed(2).replace(".",",")); //toFixed 
+    document.write(`
+        Seu imc é ${imc}
+   ` )
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src= "https://rawgit.com/caelum/projeto01/fichaAcademiaComInterfaceGrafica/apostilaIgnore/mostra.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Adivinhe um numero de 0 a 10</h1>
+
+    <p>Seu Palpite</p> 
+    Digite um numero
+    <br>
+    <input type="text" id="campoNum">
+    <br>
+    <button onclick="criarficha()">
+        Resultado
+    </button>
+
+    <script>
+        function criarficha(){
+        let num = parseInt(campoNum.Value);
+        if (num <= 1 || num >= 10 || isNaN(num)){
+
+             alert("Favor testar um número entre 1 a 10");
+             return
+        }
+        let valor = parseInt((Math.random()*10)+1);
+
+            if (valor == num){
+
+                mostra('Você acertou ');
+
+            }else if(valor != num){
+
+                mostra(`
+                Você errou o numero era: ${valor}
+                `);
+
+            
+        }
+    }
+    </script>
+    <hr>
+</body>
+</html>

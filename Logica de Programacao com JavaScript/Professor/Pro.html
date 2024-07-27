@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../77-funcoes/pegaNumero.js"></>
+    <script src="https://rawgit.com/caelum/projeto01/formataTempoUberComLibInstrutor/apostilaIgnore/libRelogio.js"></>
+    
+</head>
+
+<body>
+    
+    <h1>Metrô ou Ônibus</h1>
+
+    <script>
+        // Valores genéricos
+        const valorPassagemMetro = 4.30
+        const valorPassagemOnibus = 4.80
+        const velocidademediaMetro = 34
+        const velocidadeMediaOnibus = 18
+        // Código anterior - sem a chamada da função
+        // let distancia = prompt("Distância a ser percorrida").replace(",",".")
+        // distancia = parseFloat(distancia)
+        // Código refatorado, com o uso de função
+        let distancia = pegaNumero("Distância a ser percorrida")
+    <script/>
+
+    <h2>Valor com Metrô</h2>
+
+    <>
+        // Parâmetros
+        let tempoMetro = (distancia / velocidademediaMetro) * 60
+        document.write("Valor da passagem: R$ ", valorPassagemMetro.toFixed(2).replace(".",","), "<br>")
+        // Formata tempo
+        tempo = tempoMetro
+        let tempoMetroFormatado = formataRelogio()
+        document.write("A viagem com Metrô levará: ", tempoMetroFormatado, "<br><br>")
+    </>
+
+    <h2>Valor com Ônibus</h2>
+
+    <>
+        // Parâmetros
+        let tempoOnibus = (distancia / velocidadeMediaOnibus) * 60
+        document.write("Valor da passagem: ", valorPassagemOnibus.toFixed(2).replace(".",","), "<br>")
+        // Formata tempo - utilizando sintaxe refinada
+        tempo = tempoOnibus
+        document.write("A viagem com Ônibus levará: ", formataRelogio(), "<br><br>")
+    </>
+</body>
+
+</html>

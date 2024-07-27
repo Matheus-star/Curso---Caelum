@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../Funçoes/pegaNumero.js"></script>
+</head>
+<body>
+    <script>
+    // solicita dados
+
+    let nome = prompt("Qual Seu nome");
+    let peso = prompt("Qual Seu peso");
+    let altura = prompt("Qual Seu Altura");
+    let dataNascimento = prompt("Qual Sua data de nascimento");
+        //exibe dados
+
+        document.write(`
+        Nome: ${nome}
+        <br>
+        peso: ${peso.toFixed(2).replace(".",".")} Kg
+        Altura: ${altura.toFixed(2).replace(".",".")} 
+        <br>    
+        Data de Nacimento: ${dataNascimento.toFixed(2).replace(".",".")} 
+        `)
+
+
+    </script> 
+</body>
+</html>

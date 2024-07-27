@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../Funçoes/pegaNumero.js"></script>
+    <!--<script src="../Funçoes/document.js"></script>--> <!--Tentar Mais Tarde-->
+    <title>variaveis</title>
+</head>
+<body>
+    
+
+
+    
+
+   <!-- <script src="variaveis.js"></script> 
+    <script src="peso.js"></script>-->
+
+    
+
+
+    <h2>valor com Metro </h2>
+    <br>
+    <script>
+        //valores passagens
+        const valorpassagemMetro = 4.30;
+        const valorpassagemOnibus = 4.80;
+        const velocidadeMetro = 34;
+        const velocidadeOnibus = 18;
+
+        let distancia = pegaNumero("distancia a ser percorrida");
+        distancia = parseInt (distancia);
+
+   </script>
+    <br>
+    <br>
+    <script>
+    
+    
+    let tempometro = (distancia / velocidadeMetro) * 60;
+       document.write ("o tempo que o metro gastará  "  + tempometro.toFixed(0), (" Minutos"));
+       document.write("<br>");
+       document.write  ("valor passagem Metro  R$: "  + valorpassagemMetro.toFixed(2).replace(",","."));
+
+    </script>
+    <br>
+    <br>
+    <script>
+
+     let tempoonibus = (distancia / velocidadeOnibus) * 60;
+     document.write ("o tempo que o onibus gastará  "  + tempoonibus.toFixed(0), (" Minutos"));
+     document.write("<br>");
+     document.write ("valor passagem Onibus R$: "  + valorpassagemOnibus.toFixed(2).replace(",","."));
+      
+    </script>
+
+
+
+   
+
+</body>
+</html>
